@@ -1,0 +1,128 @@
+Depth 1st search
+Expanded      Queue
+      S       [<S>] 
+      A       [<A,S> <T,S> <Z,S>] 
+      F       [<F,A,S> <O,A,S> <R,A,S> <T,S> <Z,S>] 
+      G       [<G,F,A,S> <O,A,S> <R,A,S> <T,S> <Z,S>] 
+      goal reached!
+      solution found: S - A - F - G
+
+Breadth 1st search
+Expanded      Queue
+      S       [<S>] 
+      A       [<A,S> <T,S> <Z,S>] 
+      T       [<T,S> <Z,S> <F,A,S> <O,A,S> <R,A,S>] 
+      Z       [<Z,S> <F,A,S> <O,A,S> <R,A,S> <L,T,S>] 
+      F       [<F,A,S> <O,A,S> <R,A,S> <L,T,S> <O,Z,S>] 
+      O       [<O,A,S> <R,A,S> <L,T,S> <O,Z,S> <G,F,A,S>] 
+      R       [<R,A,S> <L,T,S> <O,Z,S> <G,F,A,S> <Z,O,A,S>] 
+      L       [<L,T,S> <O,Z,S> <G,F,A,S> <Z,O,A,S> <C,R,A,S> <P,R,A,S>] 
+      O       [<O,Z,S> <G,F,A,S> <Z,O,A,S> <C,R,A,S> <P,R,A,S> <M,L,T,S>] 
+      G       [<G,F,A,S> <Z,O,A,S> <C,R,A,S> <P,R,A,S> <M,L,T,S> <A,O,Z,S>] 
+      goal reached!
+      solution found: S - A - F - G
+
+Depth-limited search (depth-limit = 2)
+Expanded      Queue
+      S       [<S>] 
+      A       [<A,S> <T,S> <Z,S>] 
+      F       [<F,A,S> <O,A,S> <R,A,S> <T,S> <Z,S>] 
+      O       [<O,A,S> <R,A,S> <T,S> <Z,S>] 
+      R       [<R,A,S> <T,S> <Z,S>] 
+      T       [<T,S> <Z,S>] 
+      L       [<L,T,S> <Z,S>] 
+      Z       [<Z,S>] 
+      O       [<O,Z,S>] 
+failure to find path between S and G
+
+Iterative deepening search
+Expanded      Queue
+L=0
+      S       [<S>] 
+      A       [<A,S> <T,S> <Z,S>] 
+      T       [<T,S> <Z,S>] 
+      Z       [<Z,S>] 
+
+L=2
+      S       [<S>] 
+      A       [<A,S> <T,S> <Z,S>] 
+      F       [<F,A,S> <O,A,S> <R,A,S> <T,S> <Z,S>] 
+      O       [<O,A,S> <R,A,S> <T,S> <Z,S>] 
+      R       [<R,A,S> <T,S> <Z,S>] 
+      T       [<T,S> <Z,S>] 
+      L       [<L,T,S> <Z,S>] 
+      Z       [<Z,S>] 
+      O       [<O,Z,S>] 
+
+L=3
+      S       [<S>] 
+      A       [<A,S> <T,S> <Z,S>] 
+      F       [<F,A,S> <O,A,S> <R,A,S> <T,S> <Z,S>] 
+      G       [<G,F,A,S> <O,A,S> <R,A,S> <T,S> <Z,S>] 
+      G       [<G,F,A,S> <O,A,S> <R,A,S> <T,S> <Z,S>] 
+      goal reached!
+      solution found: S - A - F - G
+
+Uniform Search (Branch-and-bound)
+Expanded      Queue
+      S       [<S>] 
+      Z       [<Z,S> <T,S> <A,S>] 
+      T       [<T,S> <A,S> <O,Z,S>] 
+      A       [<A,S> <O,Z,S> <L,T,S>] 
+      O       [<O,Z,S> <R,A,S> <L,T,S> <F,A,S> <O,A,S>] 
+      R       [<R,A,S> <L,T,S> <F,A,S> <O,A,S> <A,O,Z,S>] 
+      L       [<L,T,S> <F,A,S> <O,A,S> <A,O,Z,S> <P,R,A,S> <C,R,A,S>] 
+      F       [<F,A,S> <O,A,S> <A,O,Z,S> <M,L,T,S> <P,R,A,S> <C,R,A,S>] 
+      O       [<O,A,S> <A,O,Z,S> <M,L,T,S> <P,R,A,S> <C,R,A,S> <G,F,A,S>] 
+      A       [<A,O,Z,S> <M,L,T,S> <P,R,A,S> <Z,O,A,S> <C,R,A,S> <G,F,A,S>] 
+      M       [<M,L,T,S> <P,R,A,S> <Z,O,A,S> <C,R,A,S> <R,A,O,Z,S> <F,A,O,Z,S> <G,F,A,S>] 
+      P       [<P,R,A,S> <Z,O,A,S> <C,R,A,S> <D,M,L,T,S> <R,A,O,Z,S> <F,A,O,Z,S> <G,F,A,S>] 
+      Z       [<Z,O,A,S> <C,R,A,S> <D,M,L,T,S> <R,A,O,Z,S> <F,A,O,Z,S> <G,P,R,A,S> <G,F,A,S> <C,P,R,A,S>] 
+      C       [<C,R,A,S> <D,M,L,T,S> <R,A,O,Z,S> <F,A,O,Z,S> <G,P,R,A,S> <G,F,A,S> <C,P,R,A,S>] 
+      D       [<D,M,L,T,S> <R,A,O,Z,S> <F,A,O,Z,S> <G,P,R,A,S> <G,F,A,S> <C,P,R,A,S> <D,C,R,A,S> <P,C,R,A,S>] 
+      R       [<R,A,O,Z,S> <F,A,O,Z,S> <G,P,R,A,S> <G,F,A,S> <C,P,R,A,S> <D,C,R,A,S> <C,D,M,L,T,S> <P,C,R,A,S>] 
+      F       [<F,A,O,Z,S> <G,P,R,A,S> <G,F,A,S> <C,P,R,A,S> <P,R,A,O,Z,S> <D,C,R,A,S> <C,D,M,L,T,S> <P,C,R,A,S> <C,R,A,O,Z,S>] 
+      G       [<G,P,R,A,S> <G,F,A,S> <C,P,R,A,S> <P,R,A,O,Z,S> <D,C,R,A,S> <C,D,M,L,T,S> <P,C,R,A,S> <C,R,A,O,Z,S> <G,F,A,O,Z,S>] 
+      goal reached!
+      solution found: S - A - R - P - G
+
+Greedy Search
+Expanded      Queue
+      S       [<S>] 
+      A       [<A,S> <T,S> <Z,S>] 
+      F       [<F,A,S> <R,A,S> <T,S> <Z,S> <O,A,S>] 
+      G       [<G,F,A,S> <R,A,S> <T,S> <Z,S> <O,A,S>] 
+      goal reached!
+      solution found: S - A - F - G
+
+A*
+Expanded      Queue
+      S       [<S>] 
+      A       [<A,S> <T,S> <Z,S>] 
+      R       [<R,A,S> <F,A,S> <T,S> <Z,S> <O,A,S>] 
+      P       [<P,R,A,S> <F,A,S> <T,S> <Z,S> <C,R,A,S> <O,A,S>] 
+      F       [<F,A,S> <G,P,R,A,S> <T,S> <Z,S> <C,R,A,S> <C,P,R,A,S> <O,A,S>] 
+      G       [<G,P,R,A,S> <T,S> <Z,S> <G,F,A,S> <C,R,A,S> <C,P,R,A,S> <O,A,S>] 
+      goal reached!
+      solution found: S - A - R - P - G
+
+Hill climbing without backtracking
+Expanded      Queue
+      S       [<S>] 
+      A       [<A,S>] 
+      F       [<F,A,S>] 
+      G       [<G,F,A,S>] 
+      goal reached!
+      solution found: S - A - F - G
+
+Beam search (w = 2)
+Expanded      Queue
+      S       [<S>] 
+      A       [<A,S> <T,S>] 
+      T       [<T,S> <F,A,S> <O,A,S> <R,A,S>] 
+      F       [<F,A,S> <R,A,S>] 
+      R       [<R,A,S> <G,F,A,S>] 
+      G       [<G,F,A,S> <P,R,A,S>] 
+      goal reached!
+      solution found: S - A - F - G
+
